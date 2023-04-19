@@ -23,3 +23,43 @@ console.log(stringArray);
 
 numberArray.push(4);
 console.log(numberArray);
+
+type hamada = {
+  name: string;
+  age: 34;
+};
+
+type combineType = string | number;
+type customArray = [string, string];
+
+const mytype: combineType = 30;
+const myArr: customArray = ["test", "test2"];
+
+interface combineB {
+  fullName: string;
+  maxAge: number;
+}
+
+class combinClass<T> {
+  private data: T[] = [];
+
+  addItem(item: T) {
+    this.data.push(item);
+  }
+
+  removeItem(item: T) {
+    this.data.splice(this.data.indexOf(item), 1);
+  }
+
+  getItems() {
+    return [...this.data];
+  }
+}
+
+const combinStrings = new combinClass<string>();
+combinStrings.addItem("men3m");
+console.log(combinStrings.getItems());
+
+const combinNumbers = new combinClass<number>();
+combinNumbers.addItem(34);
+console.log(combinNumbers.getItems());
